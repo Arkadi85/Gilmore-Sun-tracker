@@ -1,0 +1,7 @@
+services:
+  pool-sun:
+    build: .
+    image: pool-sun
+    ports:
+      - "7685:7685"
+    restart: unless-stopped

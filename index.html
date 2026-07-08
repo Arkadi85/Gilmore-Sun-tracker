@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#ffd59e" />
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <title>Pool Sun ☀️ Gilmore Place</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- Live weather + today's hourly forecast (compact, at the top) -->
+      <section class="weather">
+        <div class="weather-wrap">
+          <p class="weather-title">Right now at the pool 🌡️</p>
+          <div id="weather-card" class="weather-card">
+            <p class="wx-unavailable">Fetching live conditions…</p>
+          </div>
+          <div id="weather-levels" class="weather-levels">
+            <div id="weather-wind" class="weather-level"></div>
+            <div id="weather-uv" class="weather-level"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Controls (time scrubber + day picker) -->
+      <section class="controls">
+        <div class="control-row">
+          <label class="time-label" for="time-slider">
+            <span id="time-readout" class="time-readout">–:–</span>
+          </label>
+          <button id="now-btn" class="pill" type="button">Now ⏰</button>
+        </div>
+        <div class="slider-wrap">
+          <input
+            id="time-slider"
+            class="time-slider"
+            type="range"
+            min="0"
+            max="1439"
+            step="5"
+            value="720"
+          />
+          <span id="slider-hint" class="slider-hint">👆 try me — scrub the day</span>
+        </div>
+
+        <div class="control-row">
+          <label class="date-label" for="date-picker">Pick a day 🗓️</label>
+          <input id="date-picker" class="date-picker" type="date" />
+        </div>
+      </section>
+
+      <!-- Deck view -->
+      <section class="deck">
+        <div id="deck-stage" class="deck-stage">
+          <canvas id="deck-canvas"></canvas>
+        </div>
+      </section>
+
+      <!-- Sun status + meter -->
+      <section class="status">
+        <div class="status-bubble">
+          <p id="status-line" class="status-line">Loading the sky…</p>
+          <div class="sun-meter" aria-hidden="true">
+            <div id="sun-meter-fill" class="sun-meter-fill"></div>
+            <span id="sun-meter-label" class="sun-meter-label">–</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sunny hours today -->
+      <section class="controls">
+        <div class="hours-wrap">
+          <p class="hours-title">Sunny hours today ☀️</p>
+          <div id="hours-ribbon" class="hours-ribbon" aria-hidden="true"></div>
+          <p id="hours-summary" class="hours-summary">…</p>
+        </div>
+      </section>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

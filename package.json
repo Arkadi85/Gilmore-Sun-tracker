@@ -1,0 +1,21 @@
+{
+  "name": "pool-sun",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Is there sun on the Gilmore Place amenity pool right now? A kawaii sun/shade visualizer.",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "suncalc": "^1.9.0"
+  },
+  "devDependencies": {
+    "@types/suncalc": "^1.9.2",
+    "typescript": "^5.5.4",
+    "vite": "^5.4.2",
+    "vite-plugin-pwa": "^0.20.5"
+  }
+}
